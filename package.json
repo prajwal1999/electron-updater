@@ -1,0 +1,44 @@
+{
+  "name": "electron-update",
+  "version": "1.0.0",
+  "description": "basic try for updating electron applications",
+  "main": "app.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "build",
+    "publish": "build -p always"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prajwal1999/electron-updater.git"
+  },
+  "author": "prajwal kamble",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/prajwal1999/electron-updater/issues"
+  },
+  "homepage": "https://github.com/prajwal1999/electron-updater#readme",
+  "devDependencies": {
+    "electron": "^5.0.2",
+    "electron-builder": "^20.41.0",
+    "electron-builder-squirrel-windows": "^20.42.0"
+  },
+  "dependencies": {
+    "electron-log": "^3.0.6",
+    "electron-updater": "^4.0.6"
+  },
+  "build": {
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "prajwal1999",
+        "repo": "electron-updater"
+      }
+    ],
+    "appId": "com.prajwal.elctronUpdate",
+    "win": {
+      "target": "NSIS"
+    }
+  }
+}
