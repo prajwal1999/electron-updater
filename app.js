@@ -74,6 +74,22 @@ const createWindow = () => {
     autoUpdater.on('update-not-available', (info) => {
       event.sender.send('update-available-not', info)
     })
+
+    autoUpdater.on('error', (err) => {
+      event.sender.send('update-error', err)
+    })
+
+    autoUpdater.on('download-progress', (progressObj) => {
+      let log_message = "Download speed: " + progressObj.bytesPerSecond;
+      log_message = log_message + ' - Downloaded ' + progressObj.percent + '%';
+      log_message = log_message + ' (' + progressObj.transferred + "/" + progressObj.total + ')';
+      event.sender.send('update-download-progress', log_message)
+    })
+
+    autoUpdater.on('update-downloaded', (info) => {
+      event.sender.send('update-download-done', info)
+    })
+
   })
 
   // app.on('ready', function()  {
