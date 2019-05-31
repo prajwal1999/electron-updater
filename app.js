@@ -88,6 +88,7 @@ const createWindow = () => {
 
     autoUpdater.on('update-downloaded', (info) => {
       event.sender.send('update-download-done', info)
+      autoUpdater.quitAndInstall(); 
     })
 
   })
