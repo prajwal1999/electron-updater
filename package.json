@@ -1,6 +1,6 @@
 {
   "name": "electron-update",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "basic try for updating electron applications",
   "main": "app.js",
   "scripts": {
