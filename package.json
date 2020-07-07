@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/prajwal1999/electron-updater#readme",
   "devDependencies": {
-    "electron": "^5.0.2",
+    "electron": "^9.1.0",
     "electron-builder": "^20.41.0",
     "electron-builder-squirrel-windows": "^20.42.0"
   },
